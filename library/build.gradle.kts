@@ -1,0 +1,3 @@
+plugins {
+    `javiersc-kotlin-jvm`
+}
