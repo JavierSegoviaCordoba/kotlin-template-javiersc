@@ -1,3 +1,4 @@
 plugins {
-    `javiersc-kotlin-jvm`
+    `kotlin-jvm`
+    `javiersc-kotlin-library`
 }
