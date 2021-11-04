@@ -27,7 +27,7 @@ on:
         description: 'Virtual environment used in GitHub Actions workflows'
         default: 'macos-latest, ubuntu-latest, windows-latest'
         required: true
-      publish-gradle_plugin_portal:
+      publish-gradle-plugin-portal:
         description: 'Enable publishing to Gradle Plugin Portal in GitHub Actions workflows'
         default: 'false'
         required: true

@@ -12,7 +12,7 @@ jobs:
       #TODO: machines: '"{{ machines }}"'
       global-machine: 'ubuntu-latest'
       publish-maven-central: true
-      #TODO: publish-gradle-plugin-portal: "{{ publish-gradle_plugin_portal }}"
+      #TODO: publish-gradle-plugin-portal: "{{ publish-gradle-plugin-portal }}"
       #TODO: publish-jetbrains-marketplace: "{{ publish-jetbrains-marketplace }}"
       publish-docs: true
       publish-github-release: true
