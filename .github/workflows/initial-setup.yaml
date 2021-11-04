@@ -49,7 +49,7 @@ jobs:
           token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
 
       - name: Clean up TODOs
-        run: kotlin initial-setup.main.kts "name = ${{ github.event.inputs.name }}" "description = ${{ github.event.inputs.description }}" "repo = ${{ github.event.inputs.repo }}" "maven_name = ${{ github.event.inputs.maven_name }}" "main = ${{ github.event.inputs.main }}" "machines = ${{ github.event.inputs.machines }}" "gradle_plugin_portal = ${{ github.event.inputs.gradle_plugin_portal }}"
+        run: kotlin initial-setup.main.kts "name = ${{ github.event.inputs.name }}" "description = ${{ github.event.inputs.description }}" "repo = ${{ github.event.inputs.repo }}" "maven_name = ${{ github.event.inputs.maven_name }}" "main = ${{ github.event.inputs.main }}" "machines = ${{ github.event.inputs.machines }}" "publish-gradle-plugin-portal = ${{ github.event.inputs.publish-gradle-plugin-portal }}" "publish-jetbrains-marketplace = ${{ github.event.inputs.publish-jetbrains-marketplace }}"
 
       - name: Commit
         run: |
