@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          token: '${{ secrets.GITHUB_TOKEN }}'
+          token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
 
       - name: Clean up TODOs
         run: kotlin initial-setup.main.kts "name = ${{ github.event.inputs.name }}" "description = ${{ github.event.inputs.description }}" "repo = ${{ github.event.inputs.repo }}" "maven_name = ${{ github.event.inputs.maven_name }}" "main = ${{ github.event.inputs.main }}" "machines = ${{ github.event.inputs.machines }}" "gradle_plugin_portal = ${{ github.event.inputs.gradle_plugin_portal }}"
