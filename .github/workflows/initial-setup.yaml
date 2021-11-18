@@ -23,10 +23,6 @@ on:
         description: 'Main project maven name (`groupId:[THIS]:version`)'
         default: 'library'
         required: true
-      machines:
-        description: 'Virtual environment used in GitHub Actions workflows'
-        default: 'macos-latest, ubuntu-latest, windows-latest'
-        required: true
       publish-gradle-plugin-portal:
         description: 'Enable publishing to Gradle Plugin Portal in GitHub Actions workflows'
         default: 'false'
@@ -49,7 +45,7 @@ jobs:
           token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
 
       - name: Clean up TODOs
-        run: kotlin initial-setup.main.kts "name = ${{ github.event.inputs.name }}" "description = ${{ github.event.inputs.description }}" "repo = ${{ github.event.inputs.repo }}" "maven_name = ${{ github.event.inputs.maven_name }}" "main = ${{ github.event.inputs.main }}" "machines = ${{ github.event.inputs.machines }}" "publish-gradle-plugin-portal = ${{ github.event.inputs.publish-gradle-plugin-portal }}" "publish-jetbrains-marketplace = ${{ github.event.inputs.publish-jetbrains-marketplace }}"
+        run: kotlin initial-setup.main.kts "name = ${{ github.event.inputs.name }}" "description = ${{ github.event.inputs.description }}" "repo = ${{ github.event.inputs.repo }}" "maven_name = ${{ github.event.inputs.maven_name }}" "main = ${{ github.event.inputs.main }}" "publish-gradle-plugin-portal = ${{ github.event.inputs.publish-gradle-plugin-portal }}" "publish-jetbrains-marketplace = ${{ github.event.inputs.publish-jetbrains-marketplace }}"
 
       - name: Commit
         run: |
