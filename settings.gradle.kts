@@ -3,9 +3,21 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("VERSION_CATALOGS")
 
-dependencyResolutionManagement {
+pluginManagement {
     repositories {
         mavenCentral()
+        gradlePluginPortal()
+        google()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        google()
     }
 
     versionCatalogs {
