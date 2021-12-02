@@ -14,6 +14,7 @@
 
 ### Updated
 
+- `actions/setup-java -> v2.4.0`
 - `io.kotest:kotest-assertions-core -> 5.0.1`
 - `gradle -> 7.3.1`
 - `com.javiersc.kotlin:kotlin-stdlib -> 0.1.0-alpha.3`
