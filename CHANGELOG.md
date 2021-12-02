@@ -14,7 +14,7 @@
 
 ### Updated
 
-- `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.19`
+- `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.22`
 - `anton-yurchenko/git-release -> v4.2.0`
 - `io.kotest:kotest-assertions-core -> 5.0.0`
 - `org.jetbrains.kotlin:kotlin-gradle-plugin -> 1.6.0`
