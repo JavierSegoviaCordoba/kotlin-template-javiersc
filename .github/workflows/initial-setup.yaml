@@ -7,9 +7,13 @@ on:
         description: 'Project name used for docs or POM data'
         default: 'Kotlin Template'
         required: true
+      project_name:
+        description: 'Project name used by Gradle and IntelliJ IDEA'
+        default: 'kotlin-template'
+        required: true
       description:
         description: 'Project description used for docs or POM data'
-        default: 'A template which allow to create Kotlin projects'
+        default: 'A template which allow creating Kotlin projects'
         required: true
       repo:
         description: 'Project repo used for docs or POM data (`https://github.com/JavierSegoviaCordoba/[this]`)'
@@ -45,7 +49,7 @@ jobs:
           token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
 
       - name: Clean up TODOs
-        run: kotlin initial-setup.main.kts "name = ${{ github.event.inputs.name }}" "description = ${{ github.event.inputs.description }}" "repo = ${{ github.event.inputs.repo }}" "maven_name = ${{ github.event.inputs.maven_name }}" "main = ${{ github.event.inputs.main }}" "publish-gradle-plugin-portal = ${{ github.event.inputs.publish-gradle-plugin-portal }}" "publish-jetbrains-marketplace = ${{ github.event.inputs.publish-jetbrains-marketplace }}"
+        run: kotlin initial-setup.main.kts "name = ${{ github.event.inputs.name }}" "project_name = ${{ github.event.inputs.project_name }}" "description = ${{ github.event.inputs.description }}" "repo = ${{ github.event.inputs.repo }}" "maven_name = ${{ github.event.inputs.maven_name }}" "main = ${{ github.event.inputs.main }}" "publish-gradle-plugin-portal = ${{ github.event.inputs.publish-gradle-plugin-portal }}" "publish-jetbrains-marketplace = ${{ github.event.inputs.publish-jetbrains-marketplace }}"
 
       - name: Commit
         run: |
