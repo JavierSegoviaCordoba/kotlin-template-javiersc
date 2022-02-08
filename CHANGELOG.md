@@ -14,12 +14,12 @@
 
 ### Updated
 
+- `gradle -> 7.4`
 - `anton-yurchenko/git-release -> v4.2.2`
 - `io.kotest:kotest-assertions-core -> 5.1.0`
 - `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.40`
 - `com.javiersc.kotlin:kotlin-stdlib -> 0.1.0-alpha.4`
 - `org.jetbrains.kotlinx:kotlinx-coroutines-core -> 1.6.0`
-- `gradle -> 7.3.3`
 - `actions/setup-java -> v2.5.0`
 - `org.jetbrains.kotlin:kotlin-gradle-plugin -> 1.6.10`
 - `com.android.tools.build:gradle -> 7.0.4`
