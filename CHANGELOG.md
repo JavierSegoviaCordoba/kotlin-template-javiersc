@@ -14,8 +14,8 @@
 
 ### Updated
 
+- `anton-yurchenko/git-release -> v4.2.4`
 - `gradle -> 7.4`
-- `anton-yurchenko/git-release -> v4.2.2`
 - `io.kotest:kotest-assertions-core -> 5.1.0`
 - `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.40`
 - `com.javiersc.kotlin:kotlin-stdlib -> 0.1.0-alpha.4`
