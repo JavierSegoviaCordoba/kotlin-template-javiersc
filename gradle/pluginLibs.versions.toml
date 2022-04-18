@@ -2,7 +2,7 @@
 android = "7.0.4"
 javierscGradlePlugins = "0.1.0-rc.42"
 kotlin = "1.6.20"
-kotlinBinaryValidator = "0.8.0"
+kotlinBinaryValidator = "0.9.0"
 
 [libraries]
 android-toolsBuild-gradle = { module = "com.android.tools.build:gradle", version.ref = "android" }

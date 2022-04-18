@@ -14,6 +14,7 @@
 
 ### Updated
 
+- `org.jetbrains.kotlinx:binary-compatibility-validator -> 0.9.0`
 - `actions/checkout -> v3.0.1`
 - `actions/setup-java -> v3.1.1`
 - `io.kotest:kotest-assertions-core -> 5.2.3`
@@ -24,7 +25,6 @@
 - `anton-yurchenko/git-release -> v4.2.4`
 - `com.javiersc.kotlin:kotlin-stdlib -> 0.1.0-alpha.4`
 - `com.android.tools.build:gradle -> 7.0.4`
-- `org.jetbrains.kotlinx:binary-compatibility-validator -> 0.8.0`
 
 ## [0.0.0] - 2021-10-15
 
