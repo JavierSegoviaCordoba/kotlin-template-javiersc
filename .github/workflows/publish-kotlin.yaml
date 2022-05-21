@@ -15,7 +15,6 @@ jobs:
       publish-docs: true
       publish-github-release: true
     secrets:
-      TOKEN_GITHUB_ACTION: '${{ secrets.GITHUB_TOKEN }}'
       OSS_USER: '${{ secrets.OSS_USER }}'
       OSS_TOKEN: '${{ secrets.OSS_TOKEN }}'
       OSS_STAGING_PROFILE_ID: '${{ secrets.OSS_STAGING_PROFILE_ID }}'
