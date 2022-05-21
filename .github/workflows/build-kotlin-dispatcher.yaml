@@ -20,7 +20,6 @@ jobs:
       gradle-args: '${{ github.event.inputs.gradle-args }}'
       allow-github-actor-bots: false
       publish-snapshot: true
-      publish-docs: true
       publish-all-docs: '${{ github.event.inputs.publish-all-docs }}'
     secrets:
       OSS_USER: '${{ secrets.OSS_USER }}'
