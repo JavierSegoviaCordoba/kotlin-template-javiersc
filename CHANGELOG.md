@@ -14,6 +14,7 @@
 
 ### Updated
 
+- `com.android.tools.build:gradle -> 7.2.1`
 - `org.jetbrains.kotlinx:kotlinx-coroutines-core -> 1.6.3`
 - `org.jetbrains.kotlinx:binary-compatibility-validator -> 0.10.0`
 - `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.43`
@@ -24,7 +25,6 @@
 - `gradle -> 7.4.2`
 - `anton-yurchenko/git-release -> v4.2.4`
 - `com.javiersc.kotlin:kotlin-stdlib -> 0.1.0-alpha.4`
-- `com.android.tools.build:gradle -> 7.0.4`
 
 ## [0.0.0] - 2021-10-15
 
