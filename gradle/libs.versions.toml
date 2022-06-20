@@ -1,6 +1,6 @@
 [versions]
 coroutines = "1.6.3"
-javierscStdLib = "0.1.0-alpha.4"
+javierscStdLib = "0.1.0-alpha.5"
 kotest = "5.3.0"
 
 [libraries]
