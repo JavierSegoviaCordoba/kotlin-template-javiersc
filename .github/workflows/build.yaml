@@ -15,8 +15,6 @@ on:
 
 jobs:
   build:
-    if: (!contains(github.actor, '[bot]'))
-
     runs-on: ubuntu-latest
 
     steps:
@@ -36,5 +34,6 @@ jobs:
         with:
           arguments: |
             build
-            -Preckon.stage=snapshot
-            -Preckon.scope=patch
+            -Proot.project.name=javiersc-kotlin-template
+            -Psemver.stage=snapshot
+            -Psemver.scope=patch

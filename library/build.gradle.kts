@@ -1,4 +1,9 @@
 plugins {
-    `kotlin-jvm`
-    `javiersc-kotlin-config`
+    alias(libs.plugins.javiersc.hubdle)
+}
+
+hubdle {
+    kotlin {
+        jvm()
+    }
 }

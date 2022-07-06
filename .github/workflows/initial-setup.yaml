@@ -1,39 +1,47 @@
-name: initial-setup
+name: _INITIAL-SETUP_
 
 on:
   workflow_dispatch:
     inputs:
+      root_project_name:
+        description: 'Root project name used by Gradle'
+        default: 'javiersc-kotlin-template'
+        required: true
+      main_project_name:
+        description: 'Main project name'
+        default: 'library'
+        required: true
+      project_group:
+        description: 'Project group used by Gradle'
+        default: 'com.javiersc.kotlin'
+        required: true
+      sonar_organization:
+        description: 'Sonar organization name'
+        default: 'javiersc'
+        required: true
       name:
         description: 'Project name used for docs or POM data'
         default: 'Kotlin Template'
-        required: true
-      project_name:
-        description: 'Project name used by Gradle and IntelliJ IDEA'
-        default: 'kotlin-template'
         required: true
       description:
         description: 'Project description used for docs or POM data'
         default: 'A template which allow creating Kotlin projects'
         required: true
+      github_username:
+        description: 'Project repo used for docs or POM data (`https://github.com/[this]/repo`)'
+        default: 'JavierSegoviaCordoba'
+        required: true
+      username:
+        description: 'User name'
+        default: 'Javier Segovia Cordoba'
+        required: true
+      email:
+        description: 'User email'
+        default: 'javier@segoviacordoba.com'
+        required: true
       repo:
         description: 'Project repo used for docs or POM data (`https://github.com/JavierSegoviaCordoba/[this]`)'
         default: 'kotlin-template'
-        required: true
-      maven_name:
-        description: 'Project id behind the group to generate the groupId (`group.[THIS]:artifactId:version`)'
-        default: 'template'
-        required: true
-      main:
-        description: 'Main project maven name (`groupId:[THIS]:version`)'
-        default: 'library'
-        required: true
-      publish-gradle-plugin-portal:
-        description: 'Enable publishing to Gradle Plugin Portal in GitHub Actions workflows'
-        default: 'false'
-        required: true
-      publish-jetbrains-marketplace:
-        description: 'Enable publishing to JetBrains marketplace GitHub Actions workflows'
-        default: 'false'
         required: true
 
 jobs:
@@ -44,12 +52,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
 
       - name: Clean up TODOs
-        run: kotlin initial-setup.main.kts "name = ${{ github.event.inputs.name }}" "project_name = ${{ github.event.inputs.project_name }}" "description = ${{ github.event.inputs.description }}" "repo = ${{ github.event.inputs.repo }}" "maven_name = ${{ github.event.inputs.maven_name }}" "main = ${{ github.event.inputs.main }}" "publish-gradle-plugin-portal = ${{ github.event.inputs.publish-gradle-plugin-portal }}" "publish-jetbrains-marketplace = ${{ github.event.inputs.publish-jetbrains-marketplace }}"
+        run: kotlin initial-setup.main.kts "${{ toJSON(github.event.*) }}" "|||${{ join(github.event.inputs.*, ',,') }}|||"
 
       - name: Commit
         run: |

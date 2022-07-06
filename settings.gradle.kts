@@ -1,28 +1,20 @@
-// TODO: Uncomment"{{ rootProject.name = providers.gradleProperty("project.name").forUseAtConfigurationTime().get() }}"
-
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-enableFeaturePreview("VERSION_CATALOGS")
-
 pluginManagement {
+    val hubdleVersion: String =
+        file("$rootDir/gradle/libs.versions.toml")
+            .readLines()
+            .first { it.contains("hubdle") }
+            .split("\"")[1]
+
     repositories {
-        mavenCentral()
         gradlePluginPortal()
-        google()
+        mavenCentral()
+    }
+
+    plugins {
+        id("com.javiersc.hubdle.settings") version hubdleVersion
     }
 }
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
-
-    repositories {
-        mavenCentral()
-        gradlePluginPortal()
-        google()
-    }
-
-    versionCatalogs {
-        create("pluginLibs") { from(files("gradle/pluginLibs.versions.toml")) }
-    }
+plugins {
+    id("com.javiersc.hubdle.settings")
 }
-
-include(":library")

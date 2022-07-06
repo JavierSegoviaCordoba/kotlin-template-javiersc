@@ -1,10 +1,9 @@
 [versions]
-coroutines = "1.6.3"
-javierscStdLib = "0.1.0-alpha.5"
-kotest = "5.3.1"
+hubdle = "0.2.0-alpha.12"
+kotlin = "1.7.0"
 
 [libraries]
-javiersc-kotlin-kotlinStdlib = { module = "com.javiersc.kotlin:kotlin-stdlib", version.ref = "javierscStdLib" }
-jetbrains-kotlin-kotlinTest = { module = "org.jetbrains.kotlin:kotlin-test" }
-jetbrains-kotlinx-kotlinxCoroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
-kotest-kotestAssertionsCore = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+jetbrains-kotlin-kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+[plugins]
+javiersc-hubdle = { id = "com.javiersc.hubdle", version.ref = "hubdle" }

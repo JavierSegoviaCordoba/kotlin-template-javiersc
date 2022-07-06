@@ -1,11 +1,25 @@
+buildscript {
+    dependencies {
+        classpath(libs.jetbrains.kotlin.kotlinGradlePlugin)
+    }
+}
+
 plugins {
-    `javiersc-versioning`
-    // TODO: Uncomment"{{ `javiersc-all-projects` }}"
-    `javiersc-changelog`
-    `javiersc-code-analysis`
-    `javiersc-code-formatter`
-    `javiersc-docs`
-    `javiersc-nexus`
-    `javiersc-readme-badges-generator`
-    `kotlinx-binary-compatibility-validator`
+    alias(libs.plugins.javiersc.hubdle)
+}
+
+hubdle {
+    config {
+        analysis()
+        binaryCompatibilityValidator()
+        coverage()
+        documentation {
+            changelog()
+            readme {
+                badges()
+            }
+            site()
+        }
+        nexus()
+    }
 }
