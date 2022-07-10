@@ -1,5 +1,5 @@
 [versions]
-hubdle = "0.2.0-alpha.13"
+hubdle = "0.2.0-alpha.20"
 kotlin = "1.7.10"
 
 [libraries]
