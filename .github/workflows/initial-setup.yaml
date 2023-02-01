@@ -52,6 +52,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
 
       - name: Clean up TODOs
         run: kotlin initial-setup.main.kts "${{ toJSON(github.event.*) }}" "|||${{ join(github.event.inputs.*, ',,') }}|||"
