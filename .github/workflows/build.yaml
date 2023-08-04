@@ -37,3 +37,18 @@ jobs:
             -Proot.project.name=javiersc-kotlin-template
             -Psemver.stage=snapshot
             -Psemver.scope=patch
+
+      - name: Find Pull Request
+        if: ${{ (github.event_name == 'pull_request') && (inputs.auto-approve == 'true' || inputs.auto-approve == true) }}
+        id: find-pull-request
+        uses: juliangruber/find-pull-request-action@v1.8.0
+        with:
+          branch: renovate/hubdle
+
+      - name: Auto Approve
+        if: ${{ (github.event_name == 'pull_request') && (inputs.auto-approve == 'true' || inputs.auto-approve == true) }}
+        uses: hmarr/auto-approve-action@v3.2.1
+        with:
+          github-token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
+          pull-request-number: ${{ steps.find-pull-request.outputs.number }}
+          review-message: "Auto approved"
