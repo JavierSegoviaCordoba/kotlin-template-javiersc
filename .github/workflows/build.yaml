@@ -19,18 +19,18 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
 
       - name: Set up Java
-        uses: actions/setup-java@v3.13.0
+        uses: actions/setup-java@0ab4596768b603586c0de567f2430c30f5b0d2b0 # v3.13.0
         with:
           distribution: 'zulu'
           java-version: 11
 
       - name: Build
-        uses: gradle/gradle-build-action@v2.10.0
+        uses: gradle/gradle-build-action@87a9a15658c426a54dd469d4fc7dc1a73ca9d4a6 # v2.10.0
         with:
           arguments: |
             build
@@ -41,13 +41,13 @@ jobs:
       - name: Find Pull Request
         if: ${{ (github.event_name == 'pull_request') && (inputs.auto-approve == 'true' || inputs.auto-approve == true) }}
         id: find-pull-request
-        uses: juliangruber/find-pull-request-action@v1.8.0
+        uses: juliangruber/find-pull-request-action@3a4c7c62101755c3778d397dcb6a760a558992f1 # v1.8.0
         with:
           branch: renovate/hubdle
 
       - name: Auto Approve
         if: ${{ (github.event_name == 'pull_request') && (inputs.auto-approve == 'true' || inputs.auto-approve == true) }}
-        uses: hmarr/auto-approve-action@v3.2.1
+        uses: hmarr/auto-approve-action@44888193675f29a83e04faf4002fa8c0b537b1e4 # v3.2.1
         with:
           github-token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
           pull-request-number: ${{ steps.find-pull-request.outputs.number }}
