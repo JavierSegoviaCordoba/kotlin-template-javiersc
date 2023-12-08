@@ -19,36 +19,27 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-        with:
-          fetch-depth: 0
+        uses: JavierSegoviaCordoba/reusable-workflows/actions/checkout@main
 
       - name: Set up Java
-        uses: actions/setup-java@0ab4596768b603586c0de567f2430c30f5b0d2b0 # v3.13.0
-        with:
-          distribution: 'zulu'
-          java-version: 11
+        uses: JavierSegoviaCordoba/reusable-workflows/actions/setup-java@main
+
+      - name: Set up Gradle
+        uses: JavierSegoviaCordoba/reusable-workflows/actions/setup-gradle@main
 
       - name: Build
-        uses: gradle/gradle-build-action@87a9a15658c426a54dd469d4fc7dc1a73ca9d4a6 # v2.10.0
-        with:
-          arguments: |
-            build
-            -Proot.project.name=javiersc-kotlin-template
-            -Psemver.stage=snapshot
-            -Psemver.scope=patch
+        run: ./gradlew build -P root.project.name=javiersc-kotlin-template -P semver.stage=snapshot -P semver.scope=patch
 
       - name: Find Pull Request
         if: ${{ (github.event_name == 'pull_request') && (inputs.auto-approve == 'true' || inputs.auto-approve == true) }}
         id: find-pull-request
-        uses: juliangruber/find-pull-request-action@3a4c7c62101755c3778d397dcb6a760a558992f1 # v1.8.0
+        uses: JavierSegoviaCordoba/reusable-workflows/actions/find-pull-request@main
         with:
-          branch: renovate/hubdle
+          branch: 'renovate/hubdle'
 
       - name: Auto Approve
         if: ${{ (github.event_name == 'pull_request') && (inputs.auto-approve == 'true' || inputs.auto-approve == true) }}
-        uses: hmarr/auto-approve-action@44888193675f29a83e04faf4002fa8c0b537b1e4 # v3.2.1
+        uses: JavierSegoviaCordoba/reusable-workflows/actions/auto-approve@main
         with:
           github-token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
           pull-request-number: ${{ steps.find-pull-request.outputs.number }}
-          review-message: "Auto approved"
