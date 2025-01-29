@@ -19,13 +19,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: JavierSegoviaCordoba/reusable-workflows/actions/checkout@main
+        uses: JavierSegoviaCordoba/actions/git/checkout@main
 
       - name: Set up Java
-        uses: JavierSegoviaCordoba/reusable-workflows/actions/setup-java@main
+        uses: JavierSegoviaCordoba/actions/java/setup@main
 
       - name: Set up Gradle
-        uses: JavierSegoviaCordoba/reusable-workflows/actions/setup-gradle@main
+        uses: JavierSegoviaCordoba/actions/gradle/setup@main
 
       - name: Build
         run: ./gradlew build -P root.project.name=javiersc-kotlin-template -P semver.stage=snapshot -P semver.scope=patch
@@ -33,13 +33,13 @@ jobs:
       - name: Find Pull Request
         if: ${{ (github.event_name == 'pull_request') && (inputs.auto-approve == 'true' || inputs.auto-approve == true) }}
         id: find-pull-request
-        uses: JavierSegoviaCordoba/reusable-workflows/actions/find-pull-request@main
+        uses: JavierSegoviaCordoba/actions/github/pull-request/find@main
         with:
           branch: 'renovate/hubdle'
 
       - name: Auto Approve
         if: ${{ (github.event_name == 'pull_request') && (inputs.auto-approve == 'true' || inputs.auto-approve == true) }}
-        uses: JavierSegoviaCordoba/reusable-workflows/actions/auto-approve@main
+        uses: JavierSegoviaCordoba/actions/github/pull-request/auto-approve@main
         with:
           github-token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
           pull-request-number: ${{ steps.find-pull-request.outputs.number }}

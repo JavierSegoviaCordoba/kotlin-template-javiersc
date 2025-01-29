@@ -51,7 +51,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: JavierSegoviaCordoba/reusable-workflows/actions/checkout@main
+        uses: JavierSegoviaCordoba/actions/git/checkout@main
         with:
           token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
 
