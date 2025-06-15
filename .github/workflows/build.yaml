@@ -28,7 +28,7 @@ jobs:
         uses: JavierSegoviaCordoba/actions/gradle/setup@main
 
       - name: Build
-        run: ./gradlew build -P root.project.name=javiersc-kotlin-template -P semver.stage=snapshot -P semver.scope=patch
+        run: ./gradlew build -P root.project.name=javiersc-kotlin-template -P semver.stage=snapshot -P semver.scope=patch -P org.jetbrains.dokka.experimental.gradle.pluginMode=V2Enabled
 
       - name: Find Pull Request
         if: ${{ (github.event_name == 'pull_request') && (inputs.auto-approve == 'true' || inputs.auto-approve == true) }}
