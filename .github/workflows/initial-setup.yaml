@@ -51,7 +51,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: JavierSegoviaCordoba/actions/git/checkout@0ebfbcef13e7b87d8af7dd38f6bc575316adbfab # main
+        uses: JavierSegoviaCordoba/actions/git/checkout@31dba23ba5922a4c61bfc31993ff6280c861ec22 # main
         with:
           token: '${{ secrets.TOKEN_GITHUB_ACTION }}'
 
